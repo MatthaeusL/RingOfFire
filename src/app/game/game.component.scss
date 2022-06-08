@@ -48,3 +48,21 @@
     right: 25px;
     transform: scale(1.3) translateX(120px) translateY(-180px)rotate(15deg);
 }
+
+.playerPosition {
+    position: absolute;
+    right: 0;
+}
+
+.btnAdd {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+}
+
+.card {
+    position: absolute;
+    bottom: 32px;
+    left: 100px;
+    right: 100px;
+}
