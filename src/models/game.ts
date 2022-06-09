@@ -17,6 +17,7 @@ export class Game {
 
 }
 
+
 function shuffle(array: string[]) {
     let currentIndex = array.length, randomIndex;
 
