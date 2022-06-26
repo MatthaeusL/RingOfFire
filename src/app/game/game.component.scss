@@ -59,6 +59,10 @@
     position: absolute;
     right: 32px;
     bottom: 32px;
+    @media (max-width: 720px) {
+        right: 5px;
+        bottom: 16px;
+    }
 }
 
 .card {
@@ -66,4 +70,74 @@
     bottom: 32px;
     left: 100px;
     right: 100px;
+    @media (max-width: 720px) {
+        left: 0;
+        right: 50px;
+        bottom: 0;
+    }
+}
+
+.addPlayerInfo {
+    position: absolute;
+    right: 40px;
+    bottom: 150px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    .arrow {
+        font-size: 50px;
+    }
+    @media (max-width: 720px) {
+        right: 12px;
+        bottom: 100px;
+    }
+    animation-name: startAnimation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    @keyframes startAnimation {
+        0% {
+            color: red;
+        }
+        25% {
+            color: yellow;
+        }
+        50% {
+            color: blue;
+        }
+        100% {
+            color: green;
+        }
+    }
+}
+
+.scrollContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    overflow-x: auto;
+    height: 76px;
+}
+
+app-player,
+app-app-player-mobile {
+    cursor: pointer;
+    &:hover {
+        filter: brightness(1.15);
+    }
+}
+
+.gameOver {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 60vw;
+    }
 }

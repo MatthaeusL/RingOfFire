@@ -1,0 +1,18 @@
+.profilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    cursor: pointer;
+    &:hover {
+        filter: brightness(1.1);
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: end;
+}
+
+h1 {
+    text-align: center;
+}

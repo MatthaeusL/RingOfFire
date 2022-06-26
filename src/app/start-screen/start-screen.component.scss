@@ -1,11 +1,21 @@
 .startscreen {
-    background-color: #404040;
+    background-color: black;
+    background-image: url(/assets/img/rof-bg.png);
     width: 100vw;
     height: 100vh;
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    img {
+        @media (max-width: 720px) {
+            width: 80vw;
+        }
+    }
 }
 
 .startLabel {
@@ -18,10 +28,13 @@
     align-items: center;
     justify-content: center;
     img {
-        width: 12vw;
+        width: 14vw;
         &:hover {
             filter: brightness(1.1);
             cursor: pointer;
+        }
+        @media (max-width: 720px) {
+            width: 25vw;
         }
     }
 }

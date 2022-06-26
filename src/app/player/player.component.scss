@@ -1,24 +1,28 @@
 .player {
-    width: 300px;
-    height: 80px;
+    overflow: hidden;
+    width: 250px;
+    height: 50px;
     display: flex;
     align-items: center;
-    background-color: orange;
+    background-color: rgba(97, 88, 72, 0.685);
     border-top-left-radius: 60px;
     border-bottom-left-radius: 60px;
     span {
-        font-size: 32px;
+        font-size: 24px;
         margin-left: 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
     img {
-        padding-left: 10px;
-        width: 60px;
-        height: 60px;
+        margin-left: 5px;
+        width: 40px;
+        height: 40px;
         border-radius: 100%;
         object-fit: cover;
     }
 }
 
 .playerActive {
-    background-color: gray !important;
+    background-color: rgba(233, 213, 29, 0.788) !important;
 }

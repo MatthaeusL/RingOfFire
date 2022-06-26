@@ -1,5 +1,16 @@
-<app-player *ngFor="let player of game.players; let i = index" [name]="player" [playerActive]="i == game.currentPlayer" class="playerPosition" [ngStyle]="{'top.px':80 + i*90}"></app-player>
-<div class="field">
+<app-player (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index" [name]="player" [playerActive]="i == game.currentPlayer" [image]="game.playerImg[i]" class="playerPosition hide-desktop" [ngStyle]="{'top.px':80 + i*60}"></app-player>
+
+
+<div class="scrollContainer hide-mobile">
+    <app-app-player-mobile (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index" [name]="player" [playerActive]="i == game.currentPlayer" [image]="game.playerImg[i]"> </app-app-player-mobile>
+
+</div>
+
+<div *ngIf="gameOver" class="gameOver">
+    <img src="assets/img/gameover.png" alt="">
+</div>
+
+<div class="field" *ngIf="!gameOver">
     <div class="cardStack">
         <!-- Card stack-->
         <img *ngFor="let card of [0,1,2,3]; let i = index;" [ngStyle]="{'right.px': i * 5 }" src="assets/img/playing_cards/card_cover.png" alt="">
@@ -14,7 +25,11 @@
     </div>
 
 </div>
-<app-game-info class="card" [card]="game.currentCard"></app-game-info>
-<button mat-mini-fab color="primary" (click)="openDialog()" class="btnAdd">
+<app-game-info class="card" [card]="game.currentCard" *ngIf="!gameOver"></app-game-info>
+<div class="addPlayerInfo" *ngIf="!game.players.length">
+    Please add player
+    <font class="arrow">&darr; </font>
+</div>
+<button mat-mini-fab color="primary" (click)="openDialog()" class="btnAdd" *ngIf="!gameOver">
     <mat-icon>add</mat-icon>
   </button>
